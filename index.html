@@ -15,8 +15,18 @@
         
         body {
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             position: relative;
+        }
+        
+        /* Mobile-specific background fix */
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
         }
         
         body::before {
@@ -31,6 +41,14 @@
                         radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
             pointer-events: none;
             z-index: -1;
+        }
+        
+        /* Mobile overlay fix */
+        @media (max-width: 768px) {
+            body::before {
+                position: absolute;
+                min-height: 100vh;
+            }
         }
         
         .profile-pulse {
@@ -171,18 +189,17 @@
     <header class="text-center py-16 px-4">
         <div class="max-w-4xl mx-auto">
             <div class="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden profile-pulse border-4 border-purple-400">
+                <!-- 📸 TO UPDATE PROFILE IMAGE: Choose one of these options -->
                 
-                <!-- OPTION 1: Use a real photo (uncomment and replace URL) -->
-                 <img src="ProfilePic.png" alt="Priya Sharma" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                  <!-- OPTION 1: Use a real photo (uncomment and replace URL) -->
+                 <img src="ProfilePic.png" alt="Ajit Kushwaha" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 
-                                
+                               
                 <!-- OPTION 3: Emoji Avatar (uncomment to use) -->
                 <!-- <div class="w-full h-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-6xl">👩‍💻</div> -->
-
-
             </div>
             <h1 class="text-5xl md:text-6xl font-bold mb-4 fade-in-up gradient-text">Ajit Kushwaha</h1>
-            <p class="text-xl md:text-2xl text-gray-300 fade-in-up fade-in-up-delay-1">Software Developer</p>
+            <p class="text-xl md:text-2xl text-gray-300 fade-in-up fade-in-up-delay-1">Automation Developer</p>
         </div>
     </header>
 
@@ -202,8 +219,7 @@
                     beautiful places, and spending quality time with family and friends.
                 </p>
             </div>
-
-            <!-- Personal Details -->
+ <!-- Personal Details -->
             <div class="card card-hover p-8 slide-in-right">
                 <h2 class="text-2xl font-semibold mb-6 flex items-center">
                     <i class="fas fa-id-card text-blue-400 mr-3"></i>
@@ -301,10 +317,7 @@
                     <i class="fas fa-book text-green-400 w-6 mr-3"></i>
                     <span class="text-gray-300">Reading & Writing</span>
                 </div>
-                <div class="flex items-center list-item">
-                    <i class="fas fa-music text-purple-400 w-6 mr-3"></i>
-                    <span class="text-gray-300">Classical Music & Dance</span>
-                </div>
+
                 <div class="flex items-center list-item">
                     <i class="fas fa-utensils text-orange-400 w-6 mr-3"></i>
                     <span class="text-gray-300">Cooking & Food Exploration</span>
@@ -316,6 +329,10 @@
                 <div class="flex items-center list-item">
                     <i class="fas fa-palette text-pink-400 w-6 mr-3"></i>
                     <span class="text-gray-300">Art & Creative Design</span>
+                </div>
+                <div class="flex items-center list-item">
+                    <i class="fas fa-futbol text-amber-400 w-6 mr-3"></i>
+                    <span class="text-gray-300">Sports & Cricket</span>
                 </div>
             </div>
         </div>
@@ -329,21 +346,21 @@
             
             <!-- Contact Icons -->
             <div class="flex justify-center items-center space-x-8 mb-8 flex-wrap gap-4">
-                <a href="mailto:ajitkush50@gmail.com" class="contact-icon">
+                <a href="mailto:priya.sharma@email.com" class="contact-icon">
                     <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
                         <i class="fas fa-envelope text-white text-xl"></i>
                     </div>
                     <p class="text-center text-sm mt-2 text-gray-300">Email</p>
                 </a>
                 
-                <a href="tel:+919702391433" class="contact-icon">
+                <a href="tel:+919876543210" class="contact-icon">
                     <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
                         <i class="fas fa-phone text-white text-xl"></i>
                     </div>
                     <p class="text-center text-sm mt-2 text-gray-300">Phone</p>
                 </a>
                 
-                <a href="https://wa.me/+919702391433" target="_blank" class="contact-icon">
+                <a href="https://wa.me/919876543210" target="_blank" class="contact-icon">
                     <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                         <i class="fab fa-whatsapp text-white text-xl"></i>
                     </div>
@@ -353,7 +370,7 @@
             
             <!-- Portfolio Button -->
             <div class="text-center">
-                <a href="https://ajit-kushwaha.github.io/portfolio/" target="_blank" 
+                <a href="https://priyasharma-portfolio.com" target="_blank" 
                    class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 
                           text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-external-link-alt mr-2"></i>
@@ -440,6 +457,5 @@
             contactObserver.observe(contactSection);
         }
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97ac6557c2eda6dc',t:'MTc1NzE0NTI0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97aca5f81431a6dc',t:'MTc1NzE0Nzg4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
