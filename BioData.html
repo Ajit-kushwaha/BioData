@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajit Kushwaha - Matrimonial Biodata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .profile-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(139, 92, 246, 0); }
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .fade-in-up-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .fade-in-up-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.8), transparent);
+        }
+        
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(60px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: blur(5px);
+        }
+        
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .card-hover:hover {
+                transform: translateY(-4px) scale(1.01);
+            }
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .slide-in-left.visible,
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .bounce-in {
+            opacity: 0;
+            transform: scale(0.3) rotate(-10deg);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .bounce-in.visible {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+        
+        .list-item {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.4s ease-out;
+        }
+        
+        .list-item.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .contact-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #8b5cf6, #06b6d4, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Header Section -->
+    <header class="text-center py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden profile-pulse border-4 border-purple-400">
+                
+                <!-- OPTION 1: Use a real photo (uncomment and replace URL) -->
+                 <img src="ProfilePic.png" alt="Priya Sharma" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                
+                                
+                <!-- OPTION 3: Emoji Avatar (uncomment to use) -->
+                <!-- <div class="w-full h-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-6xl">👩‍💻</div> -->
+
+
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 fade-in-up gradient-text">Ajit Kushwaha</h1>
+            <p class="text-xl md:text-2xl text-gray-300 fade-in-up fade-in-up-delay-1">Software Developer</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 pb-16">
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- About Me -->
+            <div class="card card-hover p-8 slide-in-left">
+                <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-user-circle text-purple-400 mr-3"></i>
+                    About Me
+                </h2>
+                <p class="text-gray-300 leading-relaxed">
+                    I'm a passionate software engineer with a love for creating meaningful connections and building innovative solutions. 
+                    I believe in balancing professional growth with personal happiness, and I'm looking for a life partner who shares 
+                    similar values of respect, understanding, and mutual support. I enjoy exploring new technologies, traveling to 
+                    beautiful places, and spending quality time with family and friends.
+                </p>
+            </div>
+
+            <!-- Personal Details -->
+            <div class="card card-hover p-8 slide-in-right">
+                <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-id-card text-blue-400 mr-3"></i>
+                    Personal Details
+                </h2>
+                <div class="space-y-4">
+                   <!--Commented to not display DOB <div class="flex items-center list-item">
+                        <i class="fas fa-birthday-cake text-pink-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Date of Birth: March 15, 1995</span>
+                    </div> -->
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-ruler-vertical text-green-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Height: 5'6" (168 cm)</span>
+                    </div>
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-map-marker-alt text-red-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Location: Mumbai, Maharashtra</span>
+                    </div>
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-language text-yellow-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Languages: Hindi, English, Marathi</span>
+                    </div>
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-pray text-orange-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Religion: Hindu</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Family Details -->
+            <div class="card card-hover p-8 slide-in-left">
+                <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-home text-green-400 mr-3"></i>
+                    Family Details
+                </h2>
+                <div class="space-y-4">
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-male text-blue-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Father: Harikesh Kushwaha (Retired Bank Manager)</span>
+                    </div>
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-female text-pink-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Mother: Reema Kushwaha (Homemaker)</span>
+                    </div>
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-users text-purple-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Siblings: One younger brother</span>
+                    </div>
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-heart text-red-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Family Members: Grand Father, Grand Mother</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education & Career -->
+            <div class="card card-hover p-8 slide-in-right">
+                <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-graduation-cap text-yellow-400 mr-3"></i>
+                    Education & Career
+                </h2>
+                <div class="space-y-4">
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-university text-indigo-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">MCA</span>
+                    </div>
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-laptop-code text-cyan-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Junior Software Developer at Clariant</span>
+                    </div>
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-clock text-orange-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Experience: 3+ years in software development</span>
+                    </div>
+                    <div class="flex items-center list-item">
+                        <i class="fas fa-code text-green-400 w-6 mr-3"></i>
+                        <span class="text-gray-300">Specialization: Automation Developer, AI/ML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interests & Hobbies -->
+        <div class="card card-hover p-8 mt-8 bounce-in">
+            <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                <i class="fas fa-heart text-red-400 mr-3"></i>
+                Interests & Hobbies
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-center list-item">
+                    <i class="fas fa-plane text-blue-400 w-6 mr-3"></i>
+                    <span class="text-gray-300">Traveling & Photography</span>
+                </div>
+                <div class="flex items-center list-item">
+                    <i class="fas fa-book text-green-400 w-6 mr-3"></i>
+                    <span class="text-gray-300">Reading & Writing</span>
+                </div>
+                <div class="flex items-center list-item">
+                    <i class="fas fa-music text-purple-400 w-6 mr-3"></i>
+                    <span class="text-gray-300">Classical Music & Dance</span>
+                </div>
+                <div class="flex items-center list-item">
+                    <i class="fas fa-utensils text-orange-400 w-6 mr-3"></i>
+                    <span class="text-gray-300">Cooking & Food Exploration</span>
+                </div>
+                <div class="flex items-center list-item">
+                    <i class="fas fa-dumbbell text-red-400 w-6 mr-3"></i>
+                    <span class="text-gray-300">Fitness & Yoga</span>
+                </div>
+                <div class="flex items-center list-item">
+                    <i class="fas fa-palette text-pink-400 w-6 mr-3"></i>
+                    <span class="text-gray-300">Art & Creative Design</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact & Portfolio -->
+        <div class="card card-hover p-8 mt-8 scroll-fade">
+            <h2 class="text-2xl font-semibold mb-8 text-center flex items-center justify-center">
+                <i class="fas fa-address-book text-cyan-400 mr-3"></i>
+                Contact & Portfolio
+            </h2>
+            
+            <!-- Contact Icons -->
+            <div class="flex justify-center items-center space-x-8 mb-8 flex-wrap gap-4">
+                <a href="mailto:ajitkush50@gmail.com" class="contact-icon">
+                    <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-envelope text-white text-xl"></i>
+                    </div>
+                    <p class="text-center text-sm mt-2 text-gray-300">Email</p>
+                </a>
+                
+                <a href="tel:+919702391433" class="contact-icon">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-phone text-white text-xl"></i>
+                    </div>
+                    <p class="text-center text-sm mt-2 text-gray-300">Phone</p>
+                </a>
+                
+                <a href="https://wa.me/+919702391433" target="_blank" class="contact-icon">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                        <i class="fab fa-whatsapp text-white text-xl"></i>
+                    </div>
+                    <p class="text-center text-sm mt-2 text-gray-300">WhatsApp</p>
+                </a>
+            </div>
+            
+            <!-- Portfolio Button -->
+            <div class="text-center">
+                <a href="https://ajit-kushwaha.github.io/portfolio/" target="_blank" 
+                   class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 
+                          text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-external-link-alt mr-2"></i>
+                    View Portfolio
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Enhanced scroll animation observer
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate list items with staggered delay
+                    const listItems = entry.target.querySelectorAll('.list-item');
+                    listItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('animate');
+                        }, index * 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.scroll-fade, .slide-in-left, .slide-in-right, .bounce-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add staggered delay to different animation types
+        document.querySelectorAll('.slide-in-left').forEach((el, index) => {
+            el.style.transitionDelay = `${index * 0.2}s`;
+        });
+        
+        document.querySelectorAll('.slide-in-right').forEach((el, index) => {
+            el.style.transitionDelay = `${index * 0.2 + 0.1}s`;
+        });
+        
+        document.querySelectorAll('.bounce-in').forEach((el, index) => {
+            el.style.transitionDelay = `${index * 0.3}s`;
+        });
+
+        // Mobile-specific optimizations
+        if (window.innerWidth <= 768) {
+            // Reduce animation delays on mobile for faster experience
+            document.querySelectorAll('.slide-in-left, .slide-in-right').forEach((el, index) => {
+                el.style.transitionDelay = `${index * 0.1}s`;
+            });
+        }
+
+        // Add entrance animation to contact icons
+        const contactObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const icons = entry.target.querySelectorAll('.contact-icon');
+                    icons.forEach((icon, index) => {
+                        setTimeout(() => {
+                            icon.style.opacity = '1';
+                            icon.style.transform = 'translateY(0) scale(1)';
+                        }, index * 150);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        // Initialize contact icons as hidden
+        document.querySelectorAll('.contact-icon').forEach(icon => {
+            icon.style.opacity = '0';
+            icon.style.transform = 'translateY(30px) scale(0.8)';
+            icon.style.transition = 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        });
+
+        // Observe contact section
+        const contactSection = document.querySelector('.contact-icon').closest('.card');
+        if (contactSection) {
+            contactObserver.observe(contactSection);
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97ac6557c2eda6dc',t:'MTc1NzE0NTI0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
